@@ -22,3 +22,20 @@ const palChecker = (word) => {
 palChecker('mom');
 palChecker('monketbutt');
 palChecker('racecar');
+
+let animals = ['spiders', 'snakes', 'gophers', 'big spiders'];
+
+const lastItem = animals.pop(); //big spiders
+const firstItem = animals.shift(); //spiders
+const addItem = animals.push('bat');
+animals.unshift('baby hippo'); 
+
+
+// FOR LOOPS
+//1. what is your starting value - 0
+//2. what is your stopping value - something.length
+//3. how are you incrementing - +1
+
+for(let i = 0; i < animals.length; i++){
+    console.log (animals[i]);
+}
