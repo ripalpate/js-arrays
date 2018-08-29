@@ -76,15 +76,28 @@ const voterRegistrationStringBuilder = () => {
     printToDom(newString, 'voterRegistration');
 
 };
-voterRegistrationStringBuilder();
 
-// const updateVoterRegistration = () => {
-//     //do some stuff
-//     voterRegistrationStringBuilder();
-// };
+const updateVoterRegistration = (newUrl) => {
+    elizabethSanger.voterRegistrationUrl = newUrl;
+    voterRegistrationStringBuilder();
+};
 
 const donationFormStringBuilder = () => {
     const newString =`<a href=https://${elizabethSanger.donationFormUrl} target= "_blank">Donate Here </a>`
     printToDom(newString, 'donationForm');
 };
+
+const statementsStringBuilder = () => {
+    let newString = '';
+    for(let i = 0; i < elizabethSanger.statements.length; i++) {
+        newString += `<div class="statement">`;
+        newString += `<h3>${elizabethSanger.statements[i].statement}</h3>`;
+        newString += `<h6>${elizabethSanger.statements[i].category}</h6>`;
+        newString += `</div>`;
+    };
+    printToDom(newString, 'statements');
+};
+voterRegistrationStringBuilder();
 donationFormStringBuilder();
+statementsStringBuilder();
+updateVoterRegistration('www.yahoo.com');
