@@ -1,3 +1,8 @@
 body {
     background-color: burlywood;
 }
+.statement {
+    background-color:palevioletred;
+    border: 1px solid black;
+    width:50%;
+}
