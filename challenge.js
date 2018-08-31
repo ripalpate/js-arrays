@@ -77,7 +77,7 @@ const congressionalDistStringBuilder =() => {
 }
 
 const voterRegistrationStringBuilder = () => {
-  const newString = `<a href="https://${elizabethSanger.voterRegistrationUrl}" target="_blank">Register to Vote Here</a>`;
+  const newString = `<a class="registration" href="https://${elizabethSanger.voterRegistrationUrl}" target="_blank">Register to Vote Here</a>`;
   printToDom(newString, 'voterRegistration');
 
 };
@@ -88,7 +88,7 @@ const updateVoterRegistration = (newUrl) => {
 };
 
 const donationFormStringBuilder = () => {
-  const newString =`<a href=https://${elizabethSanger.donationFormUrl} target= "_blank">Donate Here </a>`
+  const newString =`<a class="donation" href=https://${elizabethSanger.donationFormUrl} target= "_blank">Donate Here </a>`
   printToDom(newString, 'donationForm');
 };
 
@@ -130,8 +130,25 @@ const volunteersStringBuilder = () => {
 };
 
 const biographyStringBuilder = () => {
-  let newString= `<p> ${elizabethSanger.biography}</p>`;
+  let newString= `<p class="bioDescription"> ${elizabethSanger.biography}</p>`;
   printToDom (newString, 'biography');
+};
+
+const imagesStringBuilder =() => {
+  let newString = '';
+  for (let i = 0; i < elizabethSanger.images.length; i++){
+    newString += `<div class="imagesList">`;
+    newString += `<img src="${elizabethSanger.images[i].imageUrl}">`;
+    newString += `<p>${elizabethSanger.images[i].description}</p>`;
+    newString += `<p>${elizabethSanger.images[i].type}</p>`;
+    newString += `</div>`;
+  };
+  printToDom(newString, 'images');
+};
+
+const missionStatementStringBuilder = () => {
+  let newString = `<p class="mission">${elizabethSanger.missionStatement}</p>`;
+  printToDom (newString, 'missionStatement');
 };
 
 congressionalDistStringBuilder();
@@ -141,4 +158,6 @@ statementsStringBuilder();
 eventsStringBuilder();
 volunteersStringBuilder();
 biographyStringBuilder();
+imagesStringBuilder();
+missionStatementStringBuilder();
 updateVoterRegistration('www.yahoo.com');
