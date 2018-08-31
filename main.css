@@ -6,3 +6,18 @@ body {
     border: 1px solid black;
     width:50%;
 }
+.eventsList {
+    background-color: palevioletred;
+    border: 1px solid black;
+    width:50%;
+}
+#events {
+    margin-top:10px;  
+}
+.volunteersList {
+    background-color: palevioletred;
+    width:50%;
+}
+#volunteers {
+    margin-top: 10px;
+}
