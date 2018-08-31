@@ -69,28 +69,17 @@ let elizabethSanger = {
 const printToDom = (stringToPrint, divId) => {
     const selectedDiv = document.getElementById(divId);
     selectedDiv.innerHTML = stringToPrint;
-};
+}
 
 const congressionalDistStringBuilder =() => {
   const newString = `<h4> ${elizabethSanger.congressionalDistrict}</h4>`;
   printToDom(newString, 'congressionalDistrict');
 }
 
-const voterRegistrationStringBuilder = () => {
-  const newString = `<a class="registration" href="https://${elizabethSanger.voterRegistrationUrl}" target="_blank">Register to Vote Here</a>`;
-  printToDom(newString, 'voterRegistration');
-
-};
-
-const updateVoterRegistration = (newUrl) => {
-  elizabethSanger.voterRegistrationUrl = newUrl;
-  voterRegistrationStringBuilder();
-};
-
-const donationFormStringBuilder = () => {
-  const newString =`<a class="donation" href=https://${elizabethSanger.donationFormUrl} target= "_blank">Donate Here </a>`
-  printToDom(newString, 'donationForm');
-};
+const updateCongessionalDistrictStringBuilder =(newNum) => {
+  elizabethSanger.congressionalDistrict = newNum;
+  congressionalDistStringBuilder();
+}
 
 const statementsStringBuilder = () => {
   let newString = '';
@@ -101,7 +90,22 @@ const statementsStringBuilder = () => {
       newString += `</div>`;
   };
   printToDom(newString, 'statements');
-};
+}
+
+const updatesStatementsStringBuilder =() => {
+   let addStatement = elizabethSanger.statements.push({statement:'Free Pie on Staurday!', category:'Health care'});
+   statementsStringBuilder();
+}
+
+const donationFormStringBuilder = () => {
+  const newString =`<a class="donation" href=https://${elizabethSanger.donationFormUrl} target= "_blank">Donate Here </a>`
+  printToDom(newString, 'donationForm');
+}
+
+const updateDonationFormStringBuilder = (newUrl) => {
+  elizabethSanger.donationFormUrl = newUrl;
+  donationFormStringBuilder();
+}
 
 const eventsStringBuilder = () => {
   let newString = '';
@@ -113,7 +117,12 @@ const eventsStringBuilder = () => {
       newString += `</div>`;
   }; 
   printToDom (newString, 'events');
-};
+}
+
+const updateEventsStringBuilder = () => {
+  let addEvent = elizabethSanger.events.push({title:'Meeting', date:'08/31/2018', description:'Attend meeting at NSS'});
+  eventsStringBuilder();
+}
 
 const volunteersStringBuilder = () => {
   let newString = '';
@@ -127,12 +136,22 @@ const volunteersStringBuilder = () => {
      newString += `<p>${elizabethSanger.volunteers[i].activities}</p>`;
   };
   printToDom (newString, 'volunteers');
-};
+}
+
+const updateVolunteerStringBuilder = () => {
+  let addVolunteer = elizabethSanger.volunteers.push({name:'Joy', address: '23 joy st', email:'joy@gmail.com', phone:'2345678901', availability: 'never', activities:'Enjoy life'});
+  volunteersStringBuilder();
+}
 
 const biographyStringBuilder = () => {
   let newString= `<p class="bioDescription"> ${elizabethSanger.biography}</p>`;
   printToDom (newString, 'biography');
-};
+}
+
+const updateBiographyStringBuilder = (newString) => {
+  elizabethSanger.biography = newString;
+  biographyStringBuilder();
+}
 
 const imagesStringBuilder =() => {
   let newString = '';
@@ -144,20 +163,49 @@ const imagesStringBuilder =() => {
     newString += `</div>`;
   };
   printToDom(newString, 'images');
-};
+}
+
+const updateImagesStringBuilder = () => {
+  let addImages = elizabethSanger.images.push({imageUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMswnUGaRbTohwRxtrjIvGLRE1kfYm9pAG0UNdtfh5olG36fZ2', description:'Family Pic', type: 'picture'});
+  imagesStringBuilder();
+}
 
 const missionStatementStringBuilder = () => {
   let newString = `<p class="mission">${elizabethSanger.missionStatement}</p>`;
   printToDom (newString, 'missionStatement');
-};
+}
+
+const updatemissionStatementStringBuilder = (newString) => {
+  elizabethSanger.missionStatement = newString;
+  missionStatementStringBuilder();
+}
+
+const voterRegistrationStringBuilder = () => {
+  const newString = `<a class="registration" href="https://${elizabethSanger.voterRegistrationUrl}" target="_blank">Register to Vote Here</a>`;
+  printToDom(newString, 'voterRegistration');
+
+}
+
+const updateVoterRegistration = (newUrl) => {
+  elizabethSanger.voterRegistrationUrl = newUrl;
+  voterRegistrationStringBuilder();
+}
 
 congressionalDistStringBuilder();
-voterRegistrationStringBuilder();
-donationFormStringBuilder();
 statementsStringBuilder();
+donationFormStringBuilder();
 eventsStringBuilder();
 volunteersStringBuilder();
 biographyStringBuilder();
 imagesStringBuilder();
 missionStatementStringBuilder();
+voterRegistrationStringBuilder();
+updateCongessionalDistrictStringBuilder(6);
+updatesStatementsStringBuilder();
+updateDonationFormStringBuilder('www.teamtreehouse.com');
+updateEventsStringBuilder();
+updateVolunteerStringBuilder();
+updateBiographyStringBuilder('I am appropriate Candidate. Please vote for me');
+updateImagesStringBuilder();
+updatemissionStatementStringBuilder('Make everyone Happy!');
 updateVoterRegistration('www.yahoo.com');
