@@ -138,6 +138,11 @@ const volunteersStringBuilder = () => {
   printToDom (newString, 'volunteers');
 }
 
+const updateVolunteerStringBuilder = () => {
+  let addVolunteer = elizabethSanger.volunteers.push({name:'Joy', address: '23 joy st', email:'joy@gmail.com', phone:'2345678901', availability: 'never', activities:'Enjoy life'});
+  volunteersStringBuilder();
+}
+
 const biographyStringBuilder = () => {
   let newString= `<p class="bioDescription"> ${elizabethSanger.biography}</p>`;
   printToDom (newString, 'biography');
@@ -158,6 +163,11 @@ const imagesStringBuilder =() => {
     newString += `</div>`;
   };
   printToDom(newString, 'images');
+}
+
+const updateImagesStringBuilder = () => {
+  let addImages = elizabethSanger.images.push({imageUrl:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMswnUGaRbTohwRxtrjIvGLRE1kfYm9pAG0UNdtfh5olG36fZ2', description:'Family Pic', type: 'picture'});
+  imagesStringBuilder();
 }
 
 const missionStatementStringBuilder = () => {
@@ -194,6 +204,8 @@ updateCongessionalDistrictStringBuilder(6);
 updatesStatementsStringBuilder();
 updateDonationFormStringBuilder('www.teamtreehouse.com');
 updateEventsStringBuilder();
+updateVolunteerStringBuilder();
 updateBiographyStringBuilder('I am appropriate Candidate. Please vote for me');
+updateImagesStringBuilder();
 updatemissionStatementStringBuilder('Make everyone Happy!');
 updateVoterRegistration('www.yahoo.com');
