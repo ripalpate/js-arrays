@@ -72,7 +72,7 @@ const printToDom = (stringToPrint, divId) => {
 }
 
 const congressionalDistStringBuilder =() => {
-  const newString = `<h4> ${elizabethSanger.congressionalDistrict}</h4>`;
+  const newString = `<h4> Congressional District: ${elizabethSanger.congressionalDistrict}</h4>`;
   printToDom(newString, 'congressionalDistrict');
 }
 
@@ -85,8 +85,8 @@ const statementsStringBuilder = () => {
   let newString = '';
   for(let i = 0; i < elizabethSanger.statements.length; i++) {
       newString += `<div class="statement">`;
-      newString += `<h3>${elizabethSanger.statements[i].statement}</h3>`;
-      newString += `<h6>${elizabethSanger.statements[i].category}</h6>`;
+      newString += `<h3>${elizabethSanger.statements[i].category}</h3>`;
+      newString += `<h4>${elizabethSanger.statements[i].statement}</h4>`;
       newString += `</div>`;
   };
   printToDom(newString, 'statements');
@@ -111,7 +111,7 @@ const eventsStringBuilder = () => {
   let newString = '';
   for(let i = 0; i < elizabethSanger.events.length; i++){
       newString += `<div class="eventsList">`;
-      newString += `<h3>${elizabethSanger.events[i].title}</h3>`;
+      newString += `<h3> ${elizabethSanger.events[i].title}</h3>`;
       newString += `<h4> ${elizabethSanger.events[i].date}</h4>`;
       newString += `<p> ${elizabethSanger.events[i].description}</p>`;
       newString += `</div>`;
@@ -134,6 +134,7 @@ const volunteersStringBuilder = () => {
      newString += `<p>${elizabethSanger.volunteers[i].phone}</p>`;
      newString += `<p>${elizabethSanger.volunteers[i].availability}</p>`;
      newString += `<p>${elizabethSanger.volunteers[i].activities}</p>`;
+     newString += `</div>`;
   };
   printToDom (newString, 'volunteers');
 }
@@ -144,7 +145,7 @@ const updateVolunteerStringBuilder = () => {
 }
 
 const biographyStringBuilder = () => {
-  let newString= `<p class="bioDescription"> ${elizabethSanger.biography}</p>`;
+  let newString= `<p class="bioDescription"> Biography: ${elizabethSanger.biography}</p>`;
   printToDom (newString, 'biography');
 }
 
@@ -157,7 +158,7 @@ const imagesStringBuilder =() => {
   let newString = '';
   for (let i = 0; i < elizabethSanger.images.length; i++){
     newString += `<div class="imagesList">`;
-    newString += `<img src="${elizabethSanger.images[i].imageUrl}">`;
+    newString += `<img src="${elizabethSanger.images[i].imageUrl}" width="250px" height="250px">`;
     newString += `<p>${elizabethSanger.images[i].description}</p>`;
     newString += `<p>${elizabethSanger.images[i].type}</p>`;
     newString += `</div>`;
@@ -171,7 +172,7 @@ const updateImagesStringBuilder = () => {
 }
 
 const missionStatementStringBuilder = () => {
-  let newString = `<p class="mission">${elizabethSanger.missionStatement}</p>`;
+  let newString = `<p class="mission"> Mission Statement: ${elizabethSanger.missionStatement}</p>`;
   printToDom (newString, 'missionStatement');
 }
 
