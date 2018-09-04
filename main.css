@@ -1,23 +1,51 @@
 body {
-    background-color: burlywood;
+    background-image: url("https://babbleedition.info/wp-content/uploads/html5-page-background-color-connect360-me-with-pages.jpg");
+}
+.main_heading {
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Playfair Display', serif;
+    background-color:lightcoral;
+    border-radius: 100px;
+    padding: 25px 10px;
+    box-shadow: 5px 5px lightgrey;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+#congressionalDistrict {
+    margin-left: 15px;
+    text-align: center;
+    font-size: 25px;
+}
+
+#donationForm {
+    text-align: center;
+    font-size: 20px;
 }
 .statement {
-    background-color:palevioletred;
-    border: 1px solid black;
-    width:50%;
+    display: inline-block;
+    margin-right: 10px;
+    padding:15px;
 }
 .eventsList {
-    background-color: palevioletred;
-    border: 1px solid black;
-    width:50%;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 15px;
+
 }
 #events {
     margin-top:10px;  
 }
 .volunteersList {
-    background-color: palevioletred;
-    width:50%;
+    display: inline-block;
+    margin-right:10px;
+    padding:15px;
 }
-#volunteers {
-    margin-top: 10px;
+.imagesList {
+    display: inline-block;
+    margin-right: 10px;
+}
+#voterRegistration {
+    text-align: center;
+    font-size: 20px;
 }
